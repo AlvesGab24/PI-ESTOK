@@ -7,36 +7,49 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 .container {
     background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 400px;
 }
+
 h1, h2 {
     margin-bottom: 20px;
+    text-align: center;
 }
+
 form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
+
 input, button {
-    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 button {
     background: #28a745;
     color: white;
     border: none;
     cursor: pointer;
+    transition: background 0.3s;
 }
+
+button:hover {
+    background: #218838;
+}
+
 ul {
     list-style: none;
     padding: 0;
 }
+
 li {
     padding: 10px;
     background: #f9f9f9;
@@ -44,6 +57,8 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 li:nth-child(odd) {
@@ -58,4 +73,18 @@ li:nth-child(odd) {
 .task-details span {
     font-size: 0.9em;
     color: #555;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.delete-btn:hover {
+    background: #c82333;
 }
