@@ -15,6 +15,7 @@ document.getElementById('task-form').addEventListener('submit', function(e) {
         taskDetails.innerHTML = `<strong>${task}</strong><span>${date} ${time}</span>`;
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Excluir';
+        deleteBtn.classList.add('delete-btn');
         deleteBtn.addEventListener('click', function() {
             taskList.removeChild(li);
         });
