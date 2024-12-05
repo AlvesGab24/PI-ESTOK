@@ -1,3 +1,8 @@
+document.getElementById('open-form-btn').addEventListener('click', function() {
+    const form = document.getElementById('item-form');
+    form.style.display = form.style.display === 'none' || form.style.display === '' ? 'flex' : 'none';
+});
+
 document.getElementById('item-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const item = document.getElementById('item').value;
@@ -30,6 +35,7 @@ document.getElementById('item-form').addEventListener('submit', function(e) {
         });
 
         document.getElementById('item-form').reset();
+        document.getElementById('item-form').style.display = 'none';
     }
 });
 
