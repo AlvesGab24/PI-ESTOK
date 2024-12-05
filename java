@@ -1,29 +1,47 @@
-document.getElementById('task-form').addEventListener('submit', function(e) {
+document.getElementById('item-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const taskInput = document.getElementById('task-input');
-    const taskDate = document.getElementById('task-date');
-    const taskTime = document.getElementById('task-time');
-    const taskList = document.getElementById('task-list');
-    const task = taskInput.value;
-    const date = taskDate.value;
-    const time = taskTime.value;
+    const item = document.getElementById('item').value;
+    const cor = document.getElementById('cor').value;
+    const quantidade = document.getElementById('quantidade').value;
+    const marca = document.getElementById('marca').value;
+    const tamanho = document.getElementById('tamanho').value;
+    const valorCusto = document.getElementById('valor-custo').value;
+    const valorVenda = document.getElementById('valor-venda').value;
+    const vendidas = document.getElementById('vendidas').value;
+    const itemList = document.getElementById('item-list');
 
-    if (task && date && time) {
+    if (item && cor && quantidade && marca && tamanho && valorCusto && valorVenda && vendidas) {
         const li = document.createElement('li');
-        const taskDetails = document.createElement('div');
-        taskDetails.classList.add('task-details');
-        taskDetails.innerHTML = `<strong>${task}</strong><span>${date} ${time}</span>`;
+        const itemDetails = document.createElement('div');
+        itemDetails.classList.add('item-details');
+        itemDetails.innerHTML = `<strong>${item}</strong><span>R$ ${valorVenda} - Vendidas: ${vendidas}</span>`;
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Excluir';
         deleteBtn.classList.add('delete-btn');
         deleteBtn.addEventListener('click', function() {
-            taskList.removeChild(li);
+            itemList.removeChild(li);
         });
-        li.appendChild(taskDetails);
+        li.appendChild(itemDetails);
         li.appendChild(deleteBtn);
-        taskList.appendChild(li);
-        taskInput.value = '';
-        taskDate.value = '';
-        taskTime.value = '';
+        itemList.appendChild(li);
+
+        li.addEventListener('click', function() {
+            alert(`Item: ${item}\nCor: ${cor}\nQuantidade: ${quantidade}\nMarca: ${marca}\nTamanho: ${tamanho}\nValor de custo: R$ ${valorCusto}\nValor de venda: R$ ${valorVenda}\nVendidas: ${vendidas}`);
+        });
+
+        document.getElementById('item-form').reset();
     }
+});
+
+document.getElementById('search').addEventListener('input', function() {
+    const searchValue = this.value.toLowerCase();
+    const items = document.querySelectorAll('#item-list li');
+    items.forEach(function(item) {
+        const itemName = item.querySelector('strong').textContent.toLowerCase();
+        if (itemName.includes(searchValue)) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 });
