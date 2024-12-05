@@ -25,6 +25,10 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background-color: #800020; /* Bloco vinho */
+    padding: 20px;
+    border-radius: 5px;
+    display: none; /* Esconde o formulário inicialmente */
 }
 
 input, button {
