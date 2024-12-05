@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #800020; /* Fundo vinho */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,12 +65,12 @@ li:nth-child(odd) {
     background: #efefef;
 }
 
-.task-details {
+.item-details {
     display: flex;
     flex-direction: column;
 }
 
-.task-details span {
+.item-details span {
     font-size: 0.9em;
     color: #555;
 }
